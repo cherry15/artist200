@@ -1,0 +1,27 @@
+#hamburger-icon {
+    cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    color: aquamarine;
+    border: 1px solid white;
+    z-index: 20;
+    background-color: white;
+  }
+
+#hamburger-icon path {
+  transition: linear 0.2s all;
+}
+
+#hamburger-icon.cross path:nth-child(1) {
+    transform-origin: 20% 35%;
+    transform: rotate(45deg) scale(1.2);
+  }
+  #hamburger-icon.cross path:nth-child(2) {
+    transform: translateX(50%) scaleX(0);
+    opacity: 0;
+  }
+  #hamburger-icon.cross path:nth-child(3) {
+    transform-origin: 25% 70%;
+    transform: rotate(-45deg) scale(1.2);
+  }

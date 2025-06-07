@@ -5,10 +5,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import Menu from "./menu/menu";
+import Square from "./square/square";
+import { ArtistProvider } from "./artistReducer";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -19,7 +23,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap",
   },
 ];
 
@@ -42,7 +46,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  let location = useLocation();
+  return (
+    <ArtistProvider>
+      <div className="flex flex-col md:flex-row">
+        <header className="flex pt-4 pb-4 pl-8 pr-8 h-[100px] md:h-auto md:w-[200px] md:flex-row md:content-start md:flex-wrap">
+          <div className="flex-1">
+            <p className="uppercase font-serif text-stone-400 text-[2rem]">
+              Artist200
+            </p>
+            <p className="text-stone-300 italic text-sm">Cheryl Collier</p>
+          </div>
+          <div className="flex-1">
+            <Menu />
+            <Square />
+          </div>
+        </header>
+        <main className="px-8 pt-2 overflow-hidden md:pt-4">
+          <Outlet />
+        </main>
+      </div>
+    </ArtistProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
