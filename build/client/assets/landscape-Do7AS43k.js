@@ -1,0 +1,1 @@
+import{w as t}from"./with-props-Da6b0gV-.js";import{o}from"./chunk-DQRVZFIR-C9NECug8.js";import{W as a}from"./work-C1tuk2s7.js";const i=t(function({loaderData:r}){const{landscape:s}=r;return o.jsx(o.Fragment,{children:o.jsx(a,{item:s,border:!1})})});export{i as default};

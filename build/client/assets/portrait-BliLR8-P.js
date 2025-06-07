@@ -1,0 +1,1 @@
+import{w as s}from"./with-props-Da6b0gV-.js";import{o as r}from"./chunk-DQRVZFIR-C9NECug8.js";import{W as i}from"./work-C1tuk2s7.js";const p=s(function({loaderData:t}){const{portriat:o}=t;return r.jsx(r.Fragment,{children:r.jsx(i,{item:o,border:!1})})});export{p as default};
